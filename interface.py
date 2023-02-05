@@ -6,7 +6,7 @@ import PIL.Image, PIL.ImageTk
 
 # Cores
 white = '#feffff'
-white_2 = '#D1D1D1'
+white_2 = '#f9f9fa'
 gray = '#343638'
 gray_2 = '#333432'
 
@@ -22,7 +22,16 @@ class Weather(customtkinter.CTk):
 
         # Configuração do tema padrão
         customtkinter.set_default_color_theme('dark-blue')
-        customtkinter.set_appearance_mode('light')
+        self.theme_default = customtkinter.StringVar(value='Sistema')
+
+        # Criando a mudança de temas
+        def theme(value):
+            if value == 'Claro':
+                customtkinter.set_appearance_mode('light')
+            elif value == 'Escuro':
+                customtkinter.set_appearance_mode('dark')
+            else:
+                customtkinter.set_appearance_mode('system')
 
         # Local da temperatura
         self.temperature = customtkinter.CTkLabel(self, text='34', font=('Open Sans Light', 60), text_color=(gray, white))
@@ -42,7 +51,7 @@ class Weather(customtkinter.CTk):
         self.search.grid(row=0, column=0, sticky='sw', padx=10, pady=300)
 
         # Menu da aparência
-        self.menu_theme = customtkinter.CTkOptionMenu(self, values=['Sistema', 'Escuro', 'Claro'], font=('Open Sans Extra Bold', 16), width=30, height=30)
+        self.menu_theme = customtkinter.CTkOptionMenu(self, values=['Sistema', 'Claro', 'Escuro'], font=('Open Sans Extra Bold', 16), width=30, height=30, variable=self.theme_default, command=theme)
         self.menu_theme.configure(corner_radius=20, text_color=(gray, white), fg_color=(white, gray), button_color=(white, gray), button_hover_color=(white_2, gray_2))
         self.menu_theme.configure(dropdown_fg_color=(white, gray), dropdown_font=('Open Sans Extra Bold', 12))
         self.menu_theme.grid(row=0, column=0, sticky='se', padx=190, pady=300)
