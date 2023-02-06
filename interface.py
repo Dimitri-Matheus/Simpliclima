@@ -1,9 +1,8 @@
 # Módulos
-import tkinter
 from tkinter import *
 import customtkinter
 import PIL.Image, PIL.ImageTk
-from data import api_weather
+from API import api_weather, hour_main
 
 # Cores
 white = '#feffff'
@@ -34,13 +33,14 @@ class Weather(customtkinter.CTk):
             else:
                 customtkinter.set_appearance_mode('system')
 
+
         # Local da temperatura
         self.temperature = customtkinter.CTkLabel(self, text='', font=('Open Sans Light', 60), text_color=(gray, white))
         self.temperature.place(relx=0.5, rely=0.4, anchor=CENTER)
 
         # Local do símbolo
         self.symbol = customtkinter.CTkLabel(self, text='', font=('Open Sans Light', 30), text_color=(gray, white))
-        self.symbol.place(relx=0.65, rely=0.35, anchor=CENTER)
+        self.symbol.place(relx=0.7, rely=0.35, anchor=CENTER)
 
         # Local do clima
         self.weather = customtkinter.CTkLabel(self, text='', font=('Open Sans Extra Bold', 20), text_color=(gray, white))
@@ -49,6 +49,7 @@ class Weather(customtkinter.CTk):
         # Funcionamento da api
         def fuction_api(event):
             api_weather(self.search.get(), self.temperature, self.weather, self.symbol)
+            hour_main(self.cloud_place, self.sun, self.night, self.cloudy)
 
         # Barra de pesquisa
         self.search = customtkinter.CTkEntry(self, width=170, height=30, placeholder_text='Clima', font=('Open Sans Extra Bold', 16))
@@ -68,12 +69,16 @@ class Weather(customtkinter.CTk):
         self.location_place.place(relx=0.5, rely=0.1, anchor=CENTER)
 
         # Imagem do clima
-        self.cloud_1 = customtkinter.CTkImage(dark_image=PIL.Image.open('imagens/sun_dark.png'), light_image=PIL.Image.open('imagens/sun_light.png'),size=(40, 40))
-        self.cloud_2 = customtkinter.CTkImage(dark_image=PIL.Image.open('imagens/cloudy_dark.png'), light_image=PIL.Image.open('imagens/cloudy_light.png'),size=(40, 40))
-        self.cloud_3 = customtkinter.CTkImage(dark_image=PIL.Image.open('imagens/night_dark.png'), light_image=PIL.Image.open('imagens/night_light.png'),size=(40, 40))
-        self.cloud_place = customtkinter.CTkLabel(self, text='', image=self.cloud_1)
+        self.sun= customtkinter.CTkImage(dark_image=PIL.Image.open('imagens/sun_dark.png'), light_image=PIL.Image.open('imagens/sun_light.png'),size=(40, 40))
+        self.cloudy = customtkinter.CTkImage(dark_image=PIL.Image.open('imagens/cloudy_dark.png'), light_image=PIL.Image.open('imagens/cloudy_light.png'),size=(40, 40))
+        self.night = customtkinter.CTkImage(dark_image=PIL.Image.open('imagens/night_dark.png'), light_image=PIL.Image.open('imagens/night_light.png'),size=(40, 40))
+        self.cloud_place = customtkinter.CTkLabel(self, text='')
         self.cloud_place.place(relx=0.26, rely=0.54, anchor=W)
 
+    # Adicionando o icone
+    def iconbitmap(self, bitmap):
+        self._iconbitmap_method_called = False
+        super().wm_iconbitmap('imagens\weather.ico')
 
 if __name__ == "__main__":
     app = Weather()
