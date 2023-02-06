@@ -3,6 +3,7 @@ import tkinter
 from tkinter import *
 import customtkinter
 import PIL.Image, PIL.ImageTk
+from data import api_weather
 
 # Cores
 white = '#feffff'
@@ -34,21 +35,26 @@ class Weather(customtkinter.CTk):
                 customtkinter.set_appearance_mode('system')
 
         # Local da temperatura
-        self.temperature = customtkinter.CTkLabel(self, text='34', font=('Open Sans Light', 60), text_color=(gray, white))
+        self.temperature = customtkinter.CTkLabel(self, text='', font=('Open Sans Light', 60), text_color=(gray, white))
         self.temperature.place(relx=0.5, rely=0.4, anchor=CENTER)
 
         # Local do símbolo
-        self.symbol = customtkinter.CTkLabel(self, text='°C', font=('Open Sans Light', 30), text_color=(gray, white))
+        self.symbol = customtkinter.CTkLabel(self, text='', font=('Open Sans Light', 30), text_color=(gray, white))
         self.symbol.place(relx=0.65, rely=0.35, anchor=CENTER)
 
         # Local do clima
-        self.weather = customtkinter.CTkLabel(self, text='Cloudy', font=('Open Sans Extra Bold', 20), text_color=(gray, white))
-        self.weather.place(relx=0.5, rely=0.55, anchor=CENTER)
+        self.weather = customtkinter.CTkLabel(self, text='', font=('Open Sans Extra Bold', 20), text_color=(gray, white))
+        self.weather.place(relx=0.55, rely=0.55, anchor=CENTER)
 
-        # Pesquisar
+        # Funcionamento da api
+        def fuction_api(event):
+            api_weather(self.search.get(), self.temperature, self.weather, self.symbol)
+
+        # Barra de pesquisa
         self.search = customtkinter.CTkEntry(self, width=170, height=30, placeholder_text='Clima', font=('Open Sans Extra Bold', 16))
         self.search.configure(text_color=(gray, white), corner_radius=20)
         self.search.grid(row=0, column=0, sticky='sw', padx=10, pady=300)
+        self.search.bind('<Return>', fuction_api)
 
         # Menu da aparência
         self.menu_theme = customtkinter.CTkOptionMenu(self, values=['Sistema', 'Claro', 'Escuro'], font=('Open Sans Extra Bold', 16), width=30, height=30, variable=self.theme_default, command=theme)
