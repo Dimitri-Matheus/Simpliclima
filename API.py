@@ -3,7 +3,7 @@ import requests
 from datetime import datetime
 import pytz
 
-def api_weather(city, temperature, weather, symbol, msg):
+def api_weather(city, temperature, weather, symbol):
     global zone_code
 
     # Funcionamento da API
@@ -31,7 +31,6 @@ def api_weather(city, temperature, weather, symbol, msg):
     temperature.configure(text=f'{temp_celsius:.0f}')
     weather.configure(text=f'{description}'.replace('clouds', ''))
     symbol.configure(text='°C')
-    msg.configure(text=f'Sucesso ao pesquisar {city}!')
     
 
 # Lógica das horas

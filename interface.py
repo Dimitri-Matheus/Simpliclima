@@ -48,7 +48,7 @@ class Weather(customtkinter.CTk):
 
         # Funcionamento da api
         def fuction_api(event):
-            api_weather(self.search.get(), self.temperature, self.weather, self.symbol, self.msg)
+            api_weather(self.search.get(), self.temperature, self.weather, self.symbol)
             hour_main(self.cloud_place, self.sun, self.night, self.cloudy)
 
         # Barra de pesquisa
