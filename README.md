@@ -1,5 +1,5 @@
 # Weather 🌥️
-Pesquise a sua cidade/estado para ver o estado do clima e a temperatura.
+☀️ Pesquise a sua cidade/estado para ver o estado do clima e a temperatura.
 
 ## Features:
 - Interface gráfica
