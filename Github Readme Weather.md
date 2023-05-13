@@ -49,6 +49,10 @@ To run the application, you need to have Python 3 installed and the following li
 
 ![Terminal.png](https://res.craft.do/user/full/99febbde-991f-0e46-0b3e-2ef8a021c90f/doc/60D63526-A7E0-4A93-87AD-D0127F21BDB5/1c20a4ab-5250-4f0a-b700-fa3fa8309b3a)
 
+3. Generate your API key on the OpenWeather website and add it to the API.py code.
+
+![wepik-minimalist-hotel-company-business-card-20230513215252BJw4.png](https://res.craft.do/user/full/99febbde-991f-0e46-0b3e-2ef8a021c90f/doc/60D63526-A7E0-4A93-87AD-D0127F21BDB5/bc5224f1-238f-4426-a394-21fc5cc1f9d1)
+
 ---
 
 ---
@@ -57,7 +61,7 @@ To run the application, you need to have Python 3 installed and the following li
 
 Contributions are welcome! If you want to contribute to this project, open a new issue to discuss your idea or submit a pull request with the proposed changes.
 
-## Credits/License
+## Credits
 
 This project was developed by Dimitri and uses OpenWeather as a data source.
 
