@@ -22,13 +22,13 @@ class Weather(customtkinter.CTk):
 
         # Configuração do tema padrão
         customtkinter.set_default_color_theme('dark-blue')
-        self.theme_default = customtkinter.StringVar(value='Sistema')
+        self.theme_default = customtkinter.StringVar(value='System')
 
         # Criando a mudança de temas
         def theme(value):
-            if value == 'Claro':
+            if value == 'Light':
                 customtkinter.set_appearance_mode('light')
-            elif value == 'Escuro':
+            elif value == 'Dark':
                 customtkinter.set_appearance_mode('dark')
             else:
                 customtkinter.set_appearance_mode('system')
@@ -52,13 +52,13 @@ class Weather(customtkinter.CTk):
             hour_main(self.cloud_place, self.sun, self.night, self.cloudy)
 
         # Barra de pesquisa
-        self.search = customtkinter.CTkEntry(self, width=170, height=30, placeholder_text='Clima', font=('Open Sans Extra Bold', 16))
+        self.search = customtkinter.CTkEntry(self, width=170, height=30, placeholder_text='Climate', font=('Open Sans Extra Bold', 16))
         self.search.configure(text_color=(gray, white), corner_radius=20)
         self.search.grid(row=0, column=0, sticky='sw', padx=10, pady=300)
         self.search.bind('<Return>', fuction_api)
 
         # Menu da aparência
-        self.menu_theme = customtkinter.CTkOptionMenu(self, values=['Sistema', 'Claro', 'Escuro'], font=('Open Sans Extra Bold', 16), width=30, height=30, variable=self.theme_default, command=theme)
+        self.menu_theme = customtkinter.CTkOptionMenu(self, values=['System', 'Light', 'Dark'], font=('Open Sans Extra Bold', 16), width=30, height=30, variable=self.theme_default, command=theme)
         self.menu_theme.configure(corner_radius=20, text_color=(gray, white), fg_color=(white, gray), button_color=(white, gray), button_hover_color=(white_2, gray_2))
         self.menu_theme.configure(dropdown_fg_color=(white, gray), dropdown_font=('Open Sans Extra Bold', 12))
         self.menu_theme.grid(row=0, column=0, sticky='se', padx=190, pady=300)
