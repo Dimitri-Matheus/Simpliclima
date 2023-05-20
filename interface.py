@@ -78,7 +78,7 @@ class Weather(customtkinter.CTk):
     # Adicionando o icone
     def iconbitmap(self, bitmap):
         self._iconbitmap_method_called = False
-        super().wm_iconbitmap('imagens\weather.ico')
+        super().wm_iconbitmap('imagens\Weather1.ico')
 
 if __name__ == "__main__":
     app = Weather()
