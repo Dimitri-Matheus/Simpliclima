@@ -1,6 +1,11 @@
-# Weather 🌥️
+<h1 align="center">Weather</h1>
 
-There is a simple and minimalist weather program that allows you to check the weather and temperature of your city or state.
+<h3 align="center">
+	<img src="https://github.com/Dimitri-Matheus/Dimitri-Matheus/assets/121637762/03ec39d0-9d1a-44cd-ba83-825681a44c3f" width="250" alt="Logo"/><br/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+	There is a simple and minimalist weather program that allows you to check the weather and temperature of your city or state.
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+</h3>
 
 ## Features
 
@@ -11,10 +16,10 @@ There is a simple and minimalist weather program that allows you to check the we
 ---
 
 ## Preview
-<div>
-  <img align="right" alt="dark" style="border-radius:20px;" src="https://res.craft.do/user/full/99febbde-991f-0e46-0b3e-2ef8a021c90f/doc/60D63526-A7E0-4A93-87AD-D0127F21BDB5/9779d235-8e7c-455e-997b-e2efa97fbb86">
-  <img align="center" alt="light" style="border-radius:20px;" src="https://res.craft.do/user/full/99febbde-991f-0e46-0b3e-2ef8a021c90f/doc/60D63526-A7E0-4A93-87AD-D0127F21BDB5/3c3236f7-b5d8-459e-be7c-91cca5cf457d">
-</div>
+<p align="center">
+  <img alt="dark" height="400" src="https://github.com/Dimitri-Matheus/Simpliclima/assets/121637762/fddf4c09-3f36-46df-8bfe-ecbfef1592a5"/>
+  <img alt="light" height="400" src="https://github.com/Dimitri-Matheus/Simpliclima/assets/121637762/4f5da64e-2c3e-4f1d-903a-15c42de0928f"/>
+</p>
 
 #
 
