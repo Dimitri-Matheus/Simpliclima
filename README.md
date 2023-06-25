@@ -1,7 +1,6 @@
 <h1 align="center">Weather</h1>
 
 <h3 align="center">
-	<img src="https://github.com/Dimitri-Matheus/Dimitri-Matheus/assets/121637762/03ec39d0-9d1a-44cd-ba83-825681a44c3f" width="250" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 	There is a simple and minimalist weather program that allows you to check the weather and temperature of your city or state.
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
