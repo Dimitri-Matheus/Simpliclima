@@ -52,7 +52,7 @@ class Weather(customtkinter.CTk):
             hour_main(self.cloud_place, self.sun, self.night, self.cloudy)
 
         # Barra de pesquisa
-        self.search = customtkinter.CTkEntry(self, width=170, height=30, placeholder_text='Climate', font=('Open Sans Extra Bold', 16))
+        self.search = customtkinter.CTkEntry(self, width=170, height=30, placeholder_text='City/State/Country', font=('Open Sans Extra Bold', 16))
         self.search.configure(text_color=(gray, white), corner_radius=20)
         self.search.grid(row=0, column=0, sticky='sw', padx=10, pady=300)
         self.search.bind('<Return>', fuction_api)
